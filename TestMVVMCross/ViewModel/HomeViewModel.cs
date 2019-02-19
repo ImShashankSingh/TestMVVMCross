@@ -1,17 +1,37 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace TestMVVMCross.Core.ViewModel
 {
     public class HomeViewModel : MvxViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public HomeViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
+        private IMvxAsyncCommand _navigateCommand;
+        public IMvxAsyncCommand NavigateCommand
+        {
+            get
+            {
+                _navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<ListExampleViewModel>());
+                return _navigateCommand;
+            }
+        }
+
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()
         {
             Text = "Hello MvvmCross";
             TextView = Text;
         }
+
 
         private string _text = "Hello MvvmCross";
         private string _text2 = "Hello MvvmCross";

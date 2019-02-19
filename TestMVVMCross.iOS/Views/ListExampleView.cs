@@ -7,21 +7,21 @@ using UIKit;
 namespace TestMVVMCross.iOS.Views
 {
     [MvxRootPresentation(WrapInNavigationController = true)]
-    public partial class HomeView : MvxViewController
+    public partial class ListExampleView : MvxViewController
     {
-        public HomeView() : base("HomeView", null)
+        public ListExampleView() : base("ListExampleView", null)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-            var set = this.CreateBindingSet<HomeView, Core.ViewModel.HomeViewModel>();
+
+            var set = this.CreateBindingSet<ListExampleView, Core.ViewModel.ListExampleViewModel>();
             set.Bind(TextField).To(vm => vm.Text);
             set.Bind(Button).To(vm => vm.ResetTextCommand);
-            set.Bind(NextButton).To(vm => vm.NavigateCommand);
             set.Apply();
+            // Perform any additional setup after loading the view, typically from a nib.
         }
 
         public override void DidReceiveMemoryWarning()

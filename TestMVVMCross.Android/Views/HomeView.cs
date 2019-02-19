@@ -35,15 +35,8 @@ namespace TestMVVMCross.Android.Views
             set.Bind(button).To(vm => vm.ResetTextCommand);
             set.Bind(textView).To(vm => vm.Value).WithConversion("TwoWayTest");
             set.Bind(textView2).To(vm => vm.Value);
+            set.Bind(nextButton).To(vm => vm.NavigateCommand);
             set.Apply();
-
-            nextButton.Click += NextButton_Click;
         }
-
-        void NextButton_Click(object sender, EventArgs e)
-        {
-            StartActivity(typeof(ListExampleView));
-        }
-
     }
 }

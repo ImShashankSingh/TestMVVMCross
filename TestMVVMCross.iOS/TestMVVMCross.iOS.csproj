@@ -101,6 +101,7 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\HomeView.xib" />
+    <InterfaceDefinition Include="Views\ListExampleView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -119,6 +120,10 @@
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
     <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Views\ListExampleView.cs" />
+    <Compile Include="Views\ListExampleView.designer.cs">
+      <DependentUpon>ListExampleView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestMVVMCross\TestMVVMCross.csproj">

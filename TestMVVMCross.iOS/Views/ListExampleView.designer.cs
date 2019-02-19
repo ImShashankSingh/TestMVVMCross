@@ -11,16 +11,12 @@ using UIKit;
 
 namespace TestMVVMCross.iOS.Views
 {
-    [Register ("HomeView")]
-    partial class HomeView
+    [Register ("ListExampleView")]
+    partial class ListExampleView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton Button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton NextButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -31,11 +27,6 @@ namespace TestMVVMCross.iOS.Views
             if (Button != null) {
                 Button.Dispose ();
                 Button = null;
-            }
-
-            if (NextButton != null) {
-                NextButton.Dispose ();
-                NextButton = null;
             }
 
             if (TextField != null) {
