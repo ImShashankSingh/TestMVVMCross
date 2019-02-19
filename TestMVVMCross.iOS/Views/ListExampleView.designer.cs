@@ -16,6 +16,10 @@ namespace TestMVVMCross.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton Button { get; set; }
 
         [Outlet]
@@ -24,6 +28,11 @@ namespace TestMVVMCross.iOS.Views
 
         void ReleaseDesignerOutlets ()
         {
+            if (BackButton != null) {
+                BackButton.Dispose ();
+                BackButton = null;
+            }
+
             if (Button != null) {
                 Button.Dispose ();
                 Button = null;

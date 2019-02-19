@@ -10,6 +10,7 @@
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="TextField" destination="143" id="name-outlet-143"/>
                 <outlet property="Button" destination="147" id="name-outlet-147"/>
+                <outlet property="BackButton" destination="307" id="name-outlet-307"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,6 +29,10 @@
                     <rect key="frame" x="184" y="418" width="46" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="307" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="184" y="472" width="46" height="30"/>
+                    <state key="normal" title="Back"/>
+                </button>
             </subviews>
             <constraints>
                 <constraint id="144" firstItem="143" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
@@ -35,6 +40,8 @@
                 <constraint id="146" firstItem="143" firstAttribute="width" secondItem="2" secondAttribute="width"/>
                 <constraint id="148" firstItem="147" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="35"/>
                 <constraint id="149" firstItem="147" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
+                <constraint id="308" firstItem="307" firstAttribute="top" secondItem="147" secondAttribute="bottom" constant="24"/>
+                <constraint id="309" firstItem="307" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
             </constraints>
         </view>
     </objects>

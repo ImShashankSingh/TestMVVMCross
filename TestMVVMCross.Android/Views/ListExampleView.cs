@@ -26,10 +26,12 @@ namespace TestMVVMCross.Android.Views
 
             var editText = FindViewById<EditText>(Resource.Id.editText);
             var button = FindViewById<Button>(Resource.Id.button);
+            var backButton = FindViewById<Button>(Resource.Id.backButton);
 
             var set = this.CreateBindingSet<ListExampleView, Core.ViewModel.ListExampleViewModel>();
             set.Bind(editText).To(vm => vm.Text);
             set.Bind(button).To(vm => vm.ResetTextCommand);
+            set.Bind(backButton).To(vm => vm.NavigateBackCommand);
             set.Apply();
         }
     }

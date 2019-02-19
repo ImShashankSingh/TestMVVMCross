@@ -20,6 +20,7 @@ namespace TestMVVMCross.iOS.Views
             var set = this.CreateBindingSet<ListExampleView, Core.ViewModel.ListExampleViewModel>();
             set.Bind(TextField).To(vm => vm.Text);
             set.Bind(Button).To(vm => vm.ResetTextCommand);
+            set.Bind(BackButton).To(vm => vm.NavigateBackCommand);
             set.Apply();
             // Perform any additional setup after loading the view, typically from a nib.
         }
