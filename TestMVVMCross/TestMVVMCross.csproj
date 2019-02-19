@@ -11,4 +11,7 @@
     <Folder Include="ViewModel\" />
     <Folder Include="Converters\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModel\BaseViewModel.cs" />
+  </ItemGroup>
 </Project>

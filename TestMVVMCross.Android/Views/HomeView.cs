@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +16,6 @@ using MvvmCross.Platforms.Android.Views;
 
 namespace TestMVVMCross.Android.Views
 {
-    [MvxActivityPresentation]
     [Activity(Label = "View for HomeViewModel")]
     public class HomeView : MvxActivity
     {
@@ -30,6 +28,7 @@ namespace TestMVVMCross.Android.Views
             var button = FindViewById<Button>(Resource.Id.button);
             var textView = FindViewById<EditText>(Resource.Id.textView);
             var textView2 = FindViewById<TextView>(Resource.Id.textView2);
+            var nextButton = FindViewById<Button>(Resource.Id.buttonNext);
 
             var set = this.CreateBindingSet<HomeView, Core.ViewModel.HomeViewModel>();
             set.Bind(editText).To(vm => vm.Text);
@@ -37,6 +36,14 @@ namespace TestMVVMCross.Android.Views
             set.Bind(textView).To(vm => vm.Value).WithConversion("TwoWayTest");
             set.Bind(textView2).To(vm => vm.Value);
             set.Apply();
+
+            nextButton.Click += NextButton_Click;
         }
+
+        void NextButton_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(ListExampleView));
+        }
+
     }
 }
