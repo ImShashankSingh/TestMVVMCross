@@ -2,10 +2,11 @@
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using TestMVVMCross.NavigationArgs;
 
 namespace TestMVVMCross.Core.ViewModel
 {
-    public class ListExampleViewModel : MvxViewModel
+    public class ListExampleViewModel : MvxViewModel<ListExampleViewModelArgs>
     {
 
         private readonly IMvxNavigationService _navigationService;
@@ -18,7 +19,6 @@ namespace TestMVVMCross.Core.ViewModel
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()
         {
-            Text = "Hello MvvmCross";
         }
 
         private string _text = "Hello MvvmCross";
@@ -36,5 +36,9 @@ namespace TestMVVMCross.Core.ViewModel
             _navigationService.Close(this);
         }
 
+        public override void Prepare(ListExampleViewModelArgs parameter)
+        {
+            Text = parameter.textToSecondViewModel;
+        }
     }
 }

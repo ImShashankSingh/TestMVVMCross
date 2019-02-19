@@ -10,6 +10,7 @@
   <ItemGroup>
     <Folder Include="ViewModel\" />
     <Folder Include="Converters\" />
+    <Folder Include="NavigationArgs\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ViewModel\BaseViewModel.cs" />

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using TestMVVMCross.NavigationArgs;
 
 namespace TestMVVMCross.Core.ViewModel
 {
@@ -20,7 +21,7 @@ namespace TestMVVMCross.Core.ViewModel
         {
             get
             {
-                _navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<ListExampleViewModel>());
+                _navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<ListExampleViewModel, ListExampleViewModelArgs>(new ListExampleViewModelArgs { textToSecondViewModel = Text }));
                 return _navigateCommand;
             }
         }
