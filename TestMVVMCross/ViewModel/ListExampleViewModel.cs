@@ -6,7 +6,7 @@ using TestMVVMCross.NavigationArgs;
 
 namespace TestMVVMCross.Core.ViewModel
 {
-    public class ListExampleViewModel : MvxViewModel<ListExampleViewModelArgs>
+    public class ListExampleViewModel : MvxViewModel<ListExampleViewModelArgs, ListExampleReturnArgs>
     {
 
         private readonly IMvxNavigationService _navigationService;
@@ -33,7 +33,7 @@ namespace TestMVVMCross.Core.ViewModel
 
         private void NavigateBack()
         {
-            _navigationService.Close(this);
+            _navigationService.Close(this, new ListExampleReturnArgs { textToHomeViewModel = Text });
         }
 
         public override void Prepare(ListExampleViewModelArgs parameter)

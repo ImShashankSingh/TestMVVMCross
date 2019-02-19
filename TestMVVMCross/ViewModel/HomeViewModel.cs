@@ -21,9 +21,15 @@ namespace TestMVVMCross.Core.ViewModel
         {
             get
             {
-                _navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<ListExampleViewModel, ListExampleViewModelArgs>(new ListExampleViewModelArgs { textToSecondViewModel = Text }));
+                _navigateCommand = _navigateCommand ?? new MvxAsyncCommand(NavigationMethod);
                 return _navigateCommand;
             }
+        }
+
+        private async Task NavigationMethod()
+        {
+            var result = await _navigationService.Navigate<ListExampleViewModel, ListExampleViewModelArgs, ListExampleReturnArgs>(new ListExampleViewModelArgs { textToSecondViewModel = Text });
+            Text = result.textToHomeViewModel;
         }
 
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
