@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -14,11 +15,25 @@ namespace TestMVVMCross.Core.ViewModel
         public ListExampleViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            Items = new ObservableCollection<ListItemsModel>() {
+                new ListItemsModel()
+                {
+                    Name = "Tesla Model S"
+                },
+                  new ListItemsModel()
+                {
+                    Name = "Audi R8"
+                }
+            };
         }
 
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()
         {
+            Items.Add(new ListItemsModel() {
+                Name = Text
+            });
         }
 
         private string _text = "Hello MvvmCross";
@@ -40,5 +55,21 @@ namespace TestMVVMCross.Core.ViewModel
         {
             Text = parameter.textToSecondViewModel;
         }
+
+        private ObservableCollection<ListItemsModel> _items;
+        public ObservableCollection<ListItemsModel> Items
+        {
+            get { return _items; }
+            set
+            {
+                _items = value;
+            }
+        }
+
+    }
+
+    public class ListItemsModel
+    {
+        public string Name { get; set; }
     }
 }
