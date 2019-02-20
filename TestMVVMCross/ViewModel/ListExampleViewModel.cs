@@ -12,6 +12,8 @@ namespace TestMVVMCross.Core.ViewModel
 
         private readonly IMvxNavigationService _navigationService;
 
+        //public static event EventHandler<ListItemsModel> ClickEvent;
+
         public ListExampleViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -65,6 +67,26 @@ namespace TestMVVMCross.Core.ViewModel
                 _items = value;
             }
         }
+
+        public IMvxCommand ItemClickCommand
+        {
+            get
+            {
+                return new MvxCommand<ListItemsModel>(HandleClickAction);
+            }
+        }
+
+
+        void HandleClickAction(ListItemsModel obj)
+        {
+            //ClickEvent?.Invoke(this, obj);
+        }
+
+
+        //private void ClickCommand()
+        //{
+
+        //}
 
     }
 

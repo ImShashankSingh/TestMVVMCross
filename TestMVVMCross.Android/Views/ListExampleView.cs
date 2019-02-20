@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views;
+using TestMVVMCross.Core.ViewModel;
 
 namespace TestMVVMCross.Android.Views
 {
@@ -24,6 +25,8 @@ namespace TestMVVMCross.Android.Views
             SetContentView(Resource.Layout.ListExampleView);
             // Create your application here
 
+            //Core.ViewModel.ListExampleViewModel.ClickEvent += ListExampleViewModel_ClickEvent;
+
             var editText = FindViewById<EditText>(Resource.Id.editText);
             var button = FindViewById<Button>(Resource.Id.button);
             var backButton = FindViewById<Button>(Resource.Id.backButton);
@@ -34,5 +37,12 @@ namespace TestMVVMCross.Android.Views
             set.Bind(backButton).To(vm => vm.NavigateBackCommand);
             set.Apply();
         }
+
+        //private void ListExampleViewModel_ClickEvent(object sender, ListItemsModel e)
+        //{
+
+        //}
     }
+
+    
 }

@@ -28,6 +28,8 @@
     <MvxListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
     local:MvxItemTemplate="@layout/listitem"
-    local:MvxBind="ItemsSource Items" />
+    local:MvxBind="ItemsSource Items; ItemClick ItemClickCommand" />
 </LinearLayout>
