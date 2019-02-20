@@ -102,6 +102,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\HomeView.xib" />
     <InterfaceDefinition Include="Views\ListExampleView.xib" />
+    <InterfaceDefinition Include="Views\MyTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -123,6 +124,10 @@
     <Compile Include="Views\ListExampleView.cs" />
     <Compile Include="Views\ListExampleView.designer.cs">
       <DependentUpon>ListExampleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyTableViewCell.cs" />
+    <Compile Include="Views\MyTableViewCell.designer.cs">
+      <DependentUpon>MyTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
