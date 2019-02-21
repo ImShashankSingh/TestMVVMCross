@@ -28,7 +28,7 @@ namespace TestMVVMCross.Core.ViewModel
 
         private async Task NavigationMethod()
         {
-            var result = await _navigationService.Navigate<ListExampleViewModel, ListExampleViewModelArgs, ListExampleReturnArgs>(new ListExampleViewModelArgs { textToSecondViewModel = Text });
+            var result = await _navigationService.Navigate<ListExampleViewModel, ListExampleViewModelArgs, ListExampleReturnArgs>(new ListExampleViewModelArgs { TextToSecondViewModel = Text });
             Text = result.textToHomeViewModel;
         }
 
@@ -59,7 +59,7 @@ namespace TestMVVMCross.Core.ViewModel
 
         public double Value
         {
-             get { return _value; }
+            get { return _value; }
             set
             {
                 SetProperty(ref _value, value);

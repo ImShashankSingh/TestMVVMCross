@@ -55,7 +55,7 @@ namespace TestMVVMCross.Core.ViewModel
 
         public override void Prepare(ListExampleViewModelArgs parameter)
         {
-            Text = parameter.textToSecondViewModel;
+            Text = parameter.TextToSecondViewModel;
         }
 
         private ObservableCollection<ListItemsModel> _items;

@@ -16,18 +16,6 @@ namespace TestMVVMCross.iOS.Views
         {
         }
 
-        public string[] list = {
-            "Xamarin",
-            "Windows",
-            "iOS",
-            "Android",
-            "Visual Studio",
-            "Azure",
-            "UWP",
-            "Xcode",
-            "Cognitive Service"
-        };
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -45,6 +33,8 @@ namespace TestMVVMCross.iOS.Views
 
             TableView.Source = source;
             // Perform any additional setup after loading the view, typically from a nib.
+
+            var t = NavigationController;
         }
 
         public override void DidReceiveMemoryWarning()

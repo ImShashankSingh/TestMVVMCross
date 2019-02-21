@@ -22,6 +22,8 @@ namespace TestMVVMCross.iOS.Views
             set.Bind(Button).To(vm => vm.ResetTextCommand);
             set.Bind(NextButton).To(vm => vm.NavigateCommand);
             set.Apply();
+
+            var t = NavigationController;
         }
 
         public override void DidReceiveMemoryWarning()
